@@ -4,9 +4,13 @@ data/raw/bt_api/
 # Pipeline processed/intermediate data
 data/processed/
 
+# outputs matrices
+outputs/matrices/
+
 # Python build/cache artifacts
 __pycache__/
 *.py[cod]
 *.egg-info/
 build/
 dist/
+

@@ -11,7 +11,8 @@ from .config import (
     DEFAULT_LEGACY_OUTPUT_ROOT,
     DEFAULT_MODES,
     DEFAULT_MSOA_GEOJSON,
-    DEFAULT_NTS_CSV,
+    DEFAULT_MSOA_REGION_LOOKUP,
+    DEFAULT_NTS_FILE,
     DEFAULT_OUTPUTS_ROOT,
     DEFAULT_REGION,
     DEFAULT_YEAR,
@@ -40,7 +41,16 @@ def _add_common_args(parser: argparse.ArgumentParser) -> None:
         help="Optional MSOA filter list csv (MSOA21CD). If omitted, process all UK MSOAs in API data.",
     )
     parser.add_argument("--msoa-geojson", type=Path, default=DEFAULT_MSOA_GEOJSON)
-    parser.add_argument("--nts-csv", type=Path, default=DEFAULT_NTS_CSV)
+    parser.add_argument(
+        "--msoa-region-lookup-path",
+        type=Path,
+        default=None,
+        help=(
+            "Optional CSV mapping MSOA21CD to NTS region name (Region of residence). "
+            f"If omitted and {DEFAULT_MSOA_REGION_LOOKUP} exists, it will be used automatically."
+        ),
+    )
+    parser.add_argument("--nts-file", "--nts-csv", dest="nts_file", type=Path, default=DEFAULT_NTS_FILE)
     parser.add_argument("--adjusted-parquet", type=Path, default=DEFAULT_ADJUSTED_PARQUET)
     parser.add_argument("--outputs-root", type=Path, default=DEFAULT_OUTPUTS_ROOT)
     parser.add_argument("--legacy-output", action="store_true")
@@ -54,7 +64,11 @@ def build_parser() -> argparse.ArgumentParser:
     run_parser = sub.add_parser("run", help="Run reassignment and matrix generation")
     _add_common_args(run_parser)
     run_parser.add_argument("--year", type=int, default=DEFAULT_YEAR)
-    run_parser.add_argument("--region", default=DEFAULT_REGION)
+    run_parser.add_argument(
+        "--region",
+        default=DEFAULT_REGION,
+        help="Optional fallback NTS region if origin MSOA region cannot be resolved.",
+    )
     run_parser.add_argument("--factor-min", type=float, default=DEFAULT_FACTOR_MIN)
     run_parser.add_argument("--factor-max", type=float, default=DEFAULT_FACTOR_MAX)
     run_parser.add_argument("--modes", default=",".join(DEFAULT_MODES))
@@ -62,7 +76,11 @@ def build_parser() -> argparse.ArgumentParser:
     reassign_parser = sub.add_parser("reassign", help="Run reassignment stage")
     _add_common_args(reassign_parser)
     reassign_parser.add_argument("--year", type=int, default=DEFAULT_YEAR)
-    reassign_parser.add_argument("--region", default=DEFAULT_REGION)
+    reassign_parser.add_argument(
+        "--region",
+        default=DEFAULT_REGION,
+        help="Optional fallback NTS region if origin MSOA region cannot be resolved.",
+    )
     reassign_parser.add_argument("--factor-min", type=float, default=DEFAULT_FACTOR_MIN)
     reassign_parser.add_argument("--factor-max", type=float, default=DEFAULT_FACTOR_MAX)
 
@@ -82,13 +100,16 @@ def _modes_from_arg(arg: str) -> tuple[str, ...]:
 def main() -> None:
     args = build_parser().parse_args()
     legacy_root = args.legacy_output_root if args.legacy_output else None
+    auto_region_lookup = DEFAULT_MSOA_REGION_LOOKUP if DEFAULT_MSOA_REGION_LOOKUP.exists() else None
+    region_lookup = args.msoa_region_lookup_path or auto_region_lookup
 
     if args.command in {"run", "reassign"}:
         reassign_cfg = ReassignConfig(
             bt_parquet=args.bt_parquet,
             msoa_filter_csv=args.msoa_filter_list,
+            msoa_region_lookup_csv=region_lookup,
             msoa_geojson=args.msoa_geojson,
-            nts_csv=args.nts_csv,
+            nts_file=args.nts_file,
             adjusted_parquet=args.adjusted_parquet,
             outputs_root=args.outputs_root,
             year=args.year,

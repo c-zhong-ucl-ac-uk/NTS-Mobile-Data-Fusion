@@ -1,33 +1,276 @@
-distance_band,bt_mode,factor
-1 to under 2 miles,RAIL,0.8018959791971699
-1 to under 2 miles,ROAD,0.6887909805811736
-1 to under 2 miles,SUBWAY,6.464283614247969
-1 to under 2 miles,WALKING,4.230637803997744
-10 to under 25 miles,RAIL,3.0513235059673294
-10 to under 25 miles,ROAD,0.946677917348542
-10 to under 25 miles,SUBWAY,100.0
-10 to under 25 miles,WALKING,3.6715806984608923
-100 miles and over,RAIL,1.764980195492745
-100 miles and over,ROAD,0.9026555813628621
-100 miles and over,SUBWAY,0.01
-100 miles and over,WALKING,0.01
-2 to under 5 miles,RAIL,2.25205572390526
-2 to under 5 miles,ROAD,0.954831891954219
-2 to under 5 miles,SUBWAY,47.93653380089812
-2 to under 5 miles,WALKING,2.1175971536272495
-25 to under 50 miles,RAIL,10.477333173951497
-25 to under 50 miles,ROAD,0.7449485096833488
-25 to under 50 miles,SUBWAY,0.01
-25 to under 50 miles,WALKING,0.01
-5 to under 10 miles,RAIL,2.6521580608569053
-5 to under 10 miles,ROAD,0.98806951668927
-5 to under 10 miles,SUBWAY,100.0
-5 to under 10 miles,WALKING,0.5175161039413562
-50 to under 100 miles,RAIL,10.898442976868758
-50 to under 100 miles,ROAD,0.712848929590482
-50 to under 100 miles,SUBWAY,0.01
-50 to under 100 miles,WALKING,0.01
-Under 1 mile,RAIL,0.01
-Under 1 mile,ROAD,0.23797355841356432
-Under 1 mile,SUBWAY,5.740666085683051
-Under 1 mile,WALKING,3.8264256683445144
+origin_region,distance_band,bt_mode,factor
+East Midlands,1 to under 2 miles,RAIL,0.01
+East Midlands,1 to under 2 miles,ROAD,0.7366171064744643
+East Midlands,1 to under 2 miles,WALKING,3.7251047755534215
+East Midlands,10 to under 25 miles,RAIL,0.6181335094626806
+East Midlands,10 to under 25 miles,ROAD,1.003403016987951
+East Midlands,10 to under 25 miles,WALKING,1.080243924785759
+East Midlands,100 miles and over,RAIL,2.1787602425126176
+East Midlands,100 miles and over,ROAD,0.8398429080429782
+East Midlands,100 miles and over,SUBWAY,0.01
+East Midlands,100 miles and over,WALKING,0.01
+East Midlands,2 to under 5 miles,RAIL,5.602055257437977
+East Midlands,2 to under 5 miles,ROAD,0.9793345241681548
+East Midlands,2 to under 5 miles,WALKING,1.4411629842565346
+East Midlands,25 to under 50 miles,RAIL,1.7238266961282582
+East Midlands,25 to under 50 miles,ROAD,0.9724602973891686
+East Midlands,25 to under 50 miles,SUBWAY,0.01
+East Midlands,25 to under 50 miles,WALKING,0.01
+East Midlands,5 to under 10 miles,RAIL,2.2476688844108397
+East Midlands,5 to under 10 miles,ROAD,0.9974015657532469
+East Midlands,5 to under 10 miles,WALKING,0.32258182126581525
+East Midlands,50 to under 100 miles,RAIL,0.7525296609413791
+East Midlands,50 to under 100 miles,ROAD,1.0213884788159704
+East Midlands,50 to under 100 miles,SUBWAY,0.01
+East Midlands,50 to under 100 miles,WALKING,0.01
+East Midlands,Under 1 mile,RAIL,0.01
+East Midlands,Under 1 mile,ROAD,0.27113392225997995
+East Midlands,Under 1 mile,WALKING,3.7660713895548894
+East of England,1 to under 2 miles,RAIL,0.503871450414853
+East of England,1 to under 2 miles,ROAD,0.6911466694953357
+East of England,1 to under 2 miles,SUBWAY,2.8115214541388895
+East of England,1 to under 2 miles,WALKING,4.138754167629185
+East of England,10 to under 25 miles,RAIL,1.0392822672603497
+East of England,10 to under 25 miles,ROAD,0.9853716358457533
+East of England,10 to under 25 miles,SUBWAY,6.729481324454063
+East of England,10 to under 25 miles,WALKING,3.826868969183399
+East of England,100 miles and over,RAIL,2.76950626049825
+East of England,100 miles and over,ROAD,0.8629074479590022
+East of England,100 miles and over,SUBWAY,0.01
+East of England,100 miles and over,WALKING,0.01
+East of England,2 to under 5 miles,RAIL,1.3496740867243027
+East of England,2 to under 5 miles,ROAD,0.9584395568515435
+East of England,2 to under 5 miles,SUBWAY,21.594461837624973
+East of England,2 to under 5 miles,WALKING,2.049424757104177
+East of England,25 to under 50 miles,RAIL,1.9150079864856149
+East of England,25 to under 50 miles,ROAD,0.847065454117331
+East of England,25 to under 50 miles,SUBWAY,0.01
+East of England,25 to under 50 miles,WALKING,0.01
+East of England,5 to under 10 miles,RAIL,1.5518589313407418
+East of England,5 to under 10 miles,ROAD,0.9931190412460535
+East of England,5 to under 10 miles,SUBWAY,9.105285109811067
+East of England,5 to under 10 miles,WALKING,0.5535504760297021
+East of England,50 to under 100 miles,RAIL,2.5578567922046367
+East of England,50 to under 100 miles,ROAD,0.7874041842632847
+East of England,50 to under 100 miles,SUBWAY,0.01
+East of England,50 to under 100 miles,WALKING,0.01
+East of England,Under 1 mile,RAIL,0.01
+East of England,Under 1 mile,ROAD,0.23752987656238497
+East of England,Under 1 mile,SUBWAY,5.6421887757457325
+East of England,Under 1 mile,WALKING,3.86223424669782
+London,1 to under 2 miles,RAIL,0.25933973975308555
+London,1 to under 2 miles,ROAD,0.6341009508051518
+London,1 to under 2 miles,SUBWAY,1.0530963276711267
+London,1 to under 2 miles,WALKING,7.261376604692746
+London,10 to under 25 miles,RAIL,0.9424576490896635
+London,10 to under 25 miles,ROAD,0.7189798267800189
+London,10 to under 25 miles,SUBWAY,5.823222701076195
+London,10 to under 25 miles,WALKING,8.042762086961831
+London,100 miles and over,RAIL,0.9267502523138995
+London,100 miles and over,ROAD,1.0479015500228508
+London,100 miles and over,SUBWAY,0.01
+London,100 miles and over,WALKING,0.01
+London,2 to under 5 miles,RAIL,0.5630082492446796
+London,2 to under 5 miles,ROAD,0.9169221315214673
+London,2 to under 5 miles,SUBWAY,2.37492866987872
+London,2 to under 5 miles,WALKING,9.718942813210557
+London,25 to under 50 miles,RAIL,0.5717973105551644
+London,25 to under 50 miles,ROAD,1.2799899291822199
+London,25 to under 50 miles,SUBWAY,2.7754179952498395
+London,25 to under 50 miles,WALKING,0.01
+London,5 to under 10 miles,RAIL,0.7639575358445122
+London,5 to under 10 miles,ROAD,0.8958638214184335
+London,5 to under 10 miles,SUBWAY,3.2046748812974197
+London,5 to under 10 miles,WALKING,4.22586259442027
+London,50 to under 100 miles,RAIL,0.8701656372054953
+London,50 to under 100 miles,ROAD,1.0803964373862538
+London,50 to under 100 miles,SUBWAY,0.01
+London,50 to under 100 miles,WALKING,0.01
+London,Under 1 mile,RAIL,0.011945496349217256
+London,Under 1 mile,ROAD,0.15316815139704862
+London,Under 1 mile,SUBWAY,0.14896666594381708
+London,Under 1 mile,WALKING,3.8357895496137413
+North East,1 to under 2 miles,RAIL,1.123868346567845
+North East,1 to under 2 miles,ROAD,0.6585134041220069
+North East,1 to under 2 miles,WALKING,4.948888316916187
+North East,10 to under 25 miles,RAIL,1.2827740294179268
+North East,10 to under 25 miles,ROAD,0.9948759020087501
+North East,10 to under 25 miles,WALKING,0.5511844307519645
+North East,100 miles and over,RAIL,1.6902730437126663
+North East,100 miles and over,ROAD,0.8280912180449774
+North East,100 miles and over,SUBWAY,0.01
+North East,100 miles and over,WALKING,0.01
+North East,2 to under 5 miles,RAIL,0.9320400708509783
+North East,2 to under 5 miles,ROAD,0.9404600249800651
+North East,2 to under 5 miles,WALKING,3.469598189363583
+North East,25 to under 50 miles,RAIL,2.18651680608585
+North East,25 to under 50 miles,ROAD,0.9453619288999886
+North East,25 to under 50 miles,WALKING,0.01
+North East,5 to under 10 miles,RAIL,3.136709602999898
+North East,5 to under 10 miles,ROAD,0.9857291089745559
+North East,5 to under 10 miles,WALKING,0.01
+North East,50 to under 100 miles,RAIL,1.5506077448748452
+North East,50 to under 100 miles,ROAD,0.9484855098738428
+North East,50 to under 100 miles,WALKING,0.01
+North East,Under 1 mile,RAIL,0.8339002397943845
+North East,Under 1 mile,ROAD,0.25615189618248324
+North East,Under 1 mile,WALKING,3.8074979857440403
+North West,1 to under 2 miles,RAIL,0.1574052705578071
+North West,1 to under 2 miles,ROAD,0.7132844762044729
+North West,1 to under 2 miles,WALKING,4.433318126866811
+North West,10 to under 25 miles,RAIL,1.059778610458801
+North West,10 to under 25 miles,ROAD,0.9987117944252144
+North West,10 to under 25 miles,WALKING,0.01
+North West,100 miles and over,RAIL,1.3808939971438068
+North West,100 miles and over,ROAD,0.926870133344801
+North West,100 miles and over,SUBWAY,0.01
+North West,100 miles and over,WALKING,0.01
+North West,2 to under 5 miles,RAIL,1.0757952633877785
+North West,2 to under 5 miles,ROAD,0.9544156117523978
+North West,2 to under 5 miles,WALKING,3.1673306756742905
+North West,25 to under 50 miles,RAIL,1.3089040659805802
+North West,25 to under 50 miles,ROAD,0.9724474413155649
+North West,25 to under 50 miles,WALKING,0.01
+North West,5 to under 10 miles,RAIL,1.3277663085414437
+North West,5 to under 10 miles,ROAD,0.9922251904613273
+North West,5 to under 10 miles,WALKING,0.788988227167829
+North West,50 to under 100 miles,RAIL,2.491339949786419
+North West,50 to under 100 miles,ROAD,0.8801819957828201
+North West,50 to under 100 miles,WALKING,0.01
+North West,Under 1 mile,RAIL,0.01
+North West,Under 1 mile,ROAD,0.25832776855614487
+North West,Under 1 mile,WALKING,3.8618393686425367
+South East,1 to under 2 miles,RAIL,0.11223898612095572
+South East,1 to under 2 miles,ROAD,0.6958849275667638
+South East,1 to under 2 miles,SUBWAY,100.0
+South East,1 to under 2 miles,WALKING,4.190414413726543
+South East,10 to under 25 miles,RAIL,1.0416994447513117
+South East,10 to under 25 miles,ROAD,0.9924621316871243
+South East,10 to under 25 miles,SUBWAY,14.239650044047721
+South East,10 to under 25 miles,WALKING,8.94735126363531
+South East,100 miles and over,RAIL,1.7303841390190389
+South East,100 miles and over,ROAD,0.9464862008751271
+South East,100 miles and over,SUBWAY,0.01
+South East,100 miles and over,WALKING,0.01
+South East,2 to under 5 miles,RAIL,0.1766615748491107
+South East,2 to under 5 miles,ROAD,0.9733202331468492
+South East,2 to under 5 miles,SUBWAY,50.771671472494056
+South East,2 to under 5 miles,WALKING,2.080831096670545
+South East,25 to under 50 miles,RAIL,1.8288221022731377
+South East,25 to under 50 miles,ROAD,0.8332438852717026
+South East,25 to under 50 miles,SUBWAY,53.00422815321481
+South East,25 to under 50 miles,WALKING,0.01
+South East,5 to under 10 miles,RAIL,0.5503723297056555
+South East,5 to under 10 miles,ROAD,1.0114475167683832
+South East,5 to under 10 miles,SUBWAY,75.6053301136171
+South East,5 to under 10 miles,WALKING,0.8203327400032774
+South East,50 to under 100 miles,RAIL,1.8058060734891432
+South East,50 to under 100 miles,ROAD,0.8574274281591302
+South East,50 to under 100 miles,SUBWAY,0.01
+South East,50 to under 100 miles,WALKING,0.01
+South East,Under 1 mile,RAIL,0.01
+South East,Under 1 mile,ROAD,0.25997750650027046
+South East,Under 1 mile,SUBWAY,100.0
+South East,Under 1 mile,WALKING,3.7396527169352325
+South West,1 to under 2 miles,RAIL,0.22107888806836984
+South West,1 to under 2 miles,ROAD,0.6862140055406157
+South West,1 to under 2 miles,WALKING,4.582068966947435
+South West,10 to under 25 miles,RAIL,0.9695903193628456
+South West,10 to under 25 miles,ROAD,0.999722202943106
+South West,10 to under 25 miles,WALKING,0.7860376661596581
+South West,100 miles and over,RAIL,1.8109514785037932
+South West,100 miles and over,ROAD,0.8862332753920557
+South West,100 miles and over,SUBWAY,0.01
+South West,100 miles and over,WALKING,0.01
+South West,2 to under 5 miles,RAIL,0.4608589750902265
+South West,2 to under 5 miles,ROAD,0.965933287568984
+South West,2 to under 5 miles,WALKING,2.0820877311561055
+South West,25 to under 50 miles,RAIL,1.4572465192229718
+South West,25 to under 50 miles,ROAD,0.9777287687055459
+South West,25 to under 50 miles,WALKING,0.01
+South West,5 to under 10 miles,RAIL,0.3709474856111578
+South West,5 to under 10 miles,ROAD,1.0163982234064777
+South West,5 to under 10 miles,WALKING,0.17019945183336263
+South West,50 to under 100 miles,RAIL,0.9226498498447143
+South West,50 to under 100 miles,ROAD,1.007460727503328
+South West,50 to under 100 miles,SUBWAY,0.01
+South West,50 to under 100 miles,WALKING,0.01
+South West,Under 1 mile,RAIL,0.01
+South West,Under 1 mile,ROAD,0.2178022839381915
+South West,Under 1 mile,WALKING,4.0364502060967276
+Wales,1 to under 2 miles,RAIL,0.9999999998403805
+Wales,1 to under 2 miles,ROAD,0.9999999999989007
+Wales,1 to under 2 miles,WALKING,0.9999999999881147
+Wales,10 to under 25 miles,RAIL,0.9999999999627824
+Wales,10 to under 25 miles,ROAD,0.9999999999989673
+Wales,10 to under 25 miles,WALKING,0.9999999997929672
+Wales,100 miles and over,RAIL,0.9999999999916498
+Wales,100 miles and over,ROAD,0.9999999999988637
+Wales,100 miles and over,SUBWAY,0.9999999769474275
+Wales,100 miles and over,WALKING,0.999999994610576
+Wales,2 to under 5 miles,RAIL,0.9999999998990988
+Wales,2 to under 5 miles,ROAD,0.9999999999989528
+Wales,2 to under 5 miles,WALKING,0.9999999999715603
+Wales,25 to under 50 miles,RAIL,0.999999999977248
+Wales,25 to under 50 miles,ROAD,0.999999999998954
+Wales,25 to under 50 miles,WALKING,0.9999999930368673
+Wales,5 to under 10 miles,RAIL,0.9999999999316089
+Wales,5 to under 10 miles,ROAD,0.9999999999989724
+Wales,5 to under 10 miles,WALKING,0.9999999999185859
+Wales,50 to under 100 miles,RAIL,0.9999999999767143
+Wales,50 to under 100 miles,ROAD,0.9999999999989551
+Wales,50 to under 100 miles,WALKING,0.9999999914938094
+Wales,Under 1 mile,RAIL,0.9999999996099826
+Wales,Under 1 mile,ROAD,0.9999999999987496
+Wales,Under 1 mile,WALKING,0.9999999999949429
+West Midlands,1 to under 2 miles,RAIL,0.1611403336920328
+West Midlands,1 to under 2 miles,ROAD,0.7588045672991532
+West Midlands,1 to under 2 miles,WALKING,3.8356136953788504
+West Midlands,10 to under 25 miles,RAIL,0.8317964267695259
+West Midlands,10 to under 25 miles,ROAD,1.0080502860327767
+West Midlands,10 to under 25 miles,WALKING,0.01
+West Midlands,100 miles and over,RAIL,1.5149814743299717
+West Midlands,100 miles and over,ROAD,0.9453401416472637
+West Midlands,100 miles and over,SUBWAY,0.01
+West Midlands,100 miles and over,WALKING,0.01
+West Midlands,2 to under 5 miles,RAIL,0.29853634492977676
+West Midlands,2 to under 5 miles,ROAD,0.9893672152725724
+West Midlands,2 to under 5 miles,WALKING,1.7342782776892782
+West Midlands,25 to under 50 miles,RAIL,1.3771986340925622
+West Midlands,25 to under 50 miles,ROAD,0.9799392810259365
+West Midlands,25 to under 50 miles,WALKING,0.01
+West Midlands,5 to under 10 miles,RAIL,1.011397670922428
+West Midlands,5 to under 10 miles,ROAD,1.002680497762511
+West Midlands,5 to under 10 miles,WALKING,0.6246809074810392
+West Midlands,50 to under 100 miles,RAIL,0.4368627207605146
+West Midlands,50 to under 100 miles,ROAD,1.0460202436820982
+West Midlands,50 to under 100 miles,SUBWAY,0.01
+West Midlands,50 to under 100 miles,WALKING,0.01
+West Midlands,Under 1 mile,RAIL,0.01
+West Midlands,Under 1 mile,ROAD,0.2599045211353522
+West Midlands,Under 1 mile,WALKING,3.9575443876487535
+Yorkshire and The Humber,1 to under 2 miles,RAIL,0.5660127374324125
+Yorkshire and The Humber,1 to under 2 miles,ROAD,0.6506703514429472
+Yorkshire and The Humber,1 to under 2 miles,WALKING,4.893689603640844
+Yorkshire and The Humber,10 to under 25 miles,RAIL,1.0594435104421949
+Yorkshire and The Humber,10 to under 25 miles,ROAD,0.9980786417376161
+Yorkshire and The Humber,10 to under 25 miles,WALKING,0.4449940513267625
+Yorkshire and The Humber,100 miles and over,RAIL,1.3330962392849057
+Yorkshire and The Humber,100 miles and over,ROAD,0.9112359079337289
+Yorkshire and The Humber,100 miles and over,SUBWAY,0.01
+Yorkshire and The Humber,100 miles and over,WALKING,0.01
+Yorkshire and The Humber,2 to under 5 miles,RAIL,0.5783736051070283
+Yorkshire and The Humber,2 to under 5 miles,ROAD,0.9324259395023937
+Yorkshire and The Humber,2 to under 5 miles,WALKING,3.6816546591747494
+Yorkshire and The Humber,25 to under 50 miles,RAIL,1.0691265285382394
+Yorkshire and The Humber,25 to under 50 miles,ROAD,0.995073350029652
+Yorkshire and The Humber,25 to under 50 miles,WALKING,0.01
+Yorkshire and The Humber,5 to under 10 miles,RAIL,0.8338565512959675
+Yorkshire and The Humber,5 to under 10 miles,ROAD,1.00337726029203
+Yorkshire and The Humber,5 to under 10 miles,WALKING,0.6206855195875763
+Yorkshire and The Humber,50 to under 100 miles,RAIL,1.864713216562868
+Yorkshire and The Humber,50 to under 100 miles,ROAD,0.9408478530477161
+Yorkshire and The Humber,50 to under 100 miles,WALKING,0.01
+Yorkshire and The Humber,Under 1 mile,RAIL,0.01
+Yorkshire and The Humber,Under 1 mile,ROAD,0.3003409480442074
+Yorkshire and The Humber,Under 1 mile,WALKING,3.6768297666836096
