@@ -1,11 +1,25 @@
 # BT API raw data
 data/raw/bt_api/
+data/raw/pop_lad_gb
+data/raw/trip_production_calculation_code
+
+# EEH geospatial data
+data/raw/geo/Lower_layer_Super_Output_Areas_(December_2021)_Boundaries_EW_BFC_(V10) cut for EEH/
 
 # Pipeline processed/intermediate data
 data/processed/
 
 # outputs matrices
-outputs/matrices/
+outputs/
+outputs_step7/
+output/
+tmp/
+
+# Local environments, caches, and desktop metadata
+.venv/
+.pytest_cache/
+.DS_Store
+.Rhistory
 
 # Python build/cache artifacts
 __pycache__/
@@ -14,3 +28,20 @@ __pycache__/
 build/
 dist/
 
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+
+notebook/
+
+# Manuscript submission bundles and local backups
+paper/arxiv_submission/
+paper/arxiv_submission.tar.gz
+paper/arxiv_submission.zip
+paper/pre_overleaf_backup_*/
