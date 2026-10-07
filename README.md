@@ -2,11 +2,18 @@
 
 Python code for *Travel Mode- and Purpose-Specific Origin–Destination Matrices for England and Wales from Fused Travel Survey and Mobile Network Data*. The `uk-travel-pipeline` package combines aggregate BT mobility records with National Travel Survey (NTS), population and trip-production evidence to estimate MSOA-to-MSOA travel by mode, time period and purpose.
 
-- Code repository: [NTS-Mobile-Data-Fusion](https://github.com/c-zhong-ucl-ac-uk/NTS-Mobile-Data-Fusion)
-- Released matrices: [Zenodo, DOI 10.5281/zenodo.22546252](https://doi.org/10.5281/zenodo.22546252)
-- Dataset structure, units, mode/purpose definitions and citation: [README_Zenodo_V1.0.md](README_Zenodo_V1.0.md)
+## Paper and dataset
 
-The deposit contains 70 adjusted matrix CSVs covering 7,264 MSOAs in England and Wales. Its typical-week and weekday AM-peak products come from different processing stages; the two build commands below preserve that distinction. This repository publishes code and documentation alongside existing public reference inputs. Licensed source data, omitted supporting inputs, processed trip records and generated matrices must be supplied or generated separately.
+| Resource | Details | Access |
+| --- | --- | --- |
+| Methods paper | *Travel Mode- and Purpose-Specific Origin-Destination Matrices for England and Wales from Fused Travel Survey and Mobile Network Data*. arXiv preprint, v1 submitted 29 September 2026. | [arXiv:2609.36466](https://arxiv.org/abs/2609.36466) · [PDF](https://arxiv.org/pdf/2609.36466) |
+| Released dataset | *An open dataset of survey-calibrated origin-destination matrices for England and Wales*. Version V1.0, published 6 September 2026; CC BY 4.0. | [Zenodo record and downloads](https://zenodo.org/records/22546252) · [DOI: 10.5281/zenodo.22546252](https://doi.org/10.5281/zenodo.22546252) |
+| Dataset guide | File naming, temporal units, mode and purpose definitions, and usage notes. | [README_Zenodo_V1.0.md](README_Zenodo_V1.0.md) |
+| Processing code | Source, tests and reproduction instructions for `uk-travel-pipeline`. | [NTS-Mobile-Data-Fusion](https://github.com/c-zhong-ucl-ac-uk/NTS-Mobile-Data-Fusion) |
+
+The dataset covers 7,264 MSOAs in England and Wales for September 2024–September 2025. Its 70 CSV matrices comprise seven typical-week all-purpose matrices, seven weekday AM-peak all-purpose matrices, and 56 weekday AM-peak purpose-specific matrices (seven modes × eight purposes). The released matrices can be downloaded and analysed without access to the licensed BT inputs.
+
+The typical-week and weekday AM-peak matrices are both final released products. The two build commands below reproduce each product using its release configuration. This repository publishes code and documentation alongside existing public reference inputs. Licensed source data, omitted supporting inputs, processed trip records and generated matrices must be supplied or generated separately.
 
 ## Installation
 
@@ -79,9 +86,9 @@ Run these commands only after obtaining and checking the inputs. They describe t
 
 Use new or clean run directories when changing options. Keep each build's adjusted parquet, purpose parquet and output directory together. Skipping a stage does not delete matrices or diagnostics left by an earlier run; in particular, `--skip-purpose-estimation` ignores an existing purpose parquet but does not remove old purpose CSVs. Preserve existing results before reusing their paths.
 
-### 1. Typical week before mode/time refinement
+### 1. Final typical-week matrices
 
-This build applies the child-origin uplift, NTS9916 regional/distance-band calibration and road-mode splitting. It disables mode/time refinement and purpose allocation, and stores its intermediate and outputs separately:
+This build generates the final typical-week product using child-origin uplift, NTS9916 regional/distance-band calibration and road-mode splitting. Its intermediate and final outputs are stored in separate locations from the AM-peak build:
 
 ```bash
 uk-travel-pipeline run \
@@ -99,9 +106,9 @@ The seven deposited typical-week matrices are:
 outputs_step7/matrices/typical_week_by_mode/OD_matrix_{MODE}_adjusted.csv
 ```
 
-The command also creates raw matrices and AM-peak matrices at this earlier stage. Those additional files are not part of the deposit.
+Use the seven adjusted typical-week matrices above for this released product. The command also generates raw matrices and AM-peak files that are outside the deposit.
 
-### 2. Weekday AM peak with purpose allocation and raking
+### 2. Final weekday AM-peak matrices
 
 This build enables mode/time refinement, local purpose allocation and NTS0502 weekday purpose raking. It uses the default intermediate and output locations expected by the paper's validation script:
 
@@ -120,7 +127,7 @@ outputs/matrices/weekday_AMpeak_by_mode/OD_matrix_{MODE}_adjusted.csv
 outputs/matrices/weekday_AMpeak_by_mode/OD_matrix_{MODE}_adjusted_by_purpose{N}.csv
 ```
 
-Here `{N}` runs from 1 to 8. This command also generates typical-week matrices after refinement, including purpose allocations; they are not the deposited typical-week product.
+Here `{N}` runs from 1 to 8. Select the AM-peak files above from this build for the release, and use build 1 for the final typical-week product.
 
 For the flat Zenodo file list, prefix the seven files from build 1 with `typical_week_` and the 63 files from build 2 with `weekday_AMpeak_`. Select adjusted files only, excluding `*_raw.csv`. See [README_Zenodo_V1.0.md](README_Zenodo_V1.0.md) for the complete 70-file contract and temporal normalization: the typical-week product represents five average weekdays plus two average weekend days, while the AM product represents one average weekday 07:00–09:59 period.
 
@@ -136,7 +143,7 @@ python paper/scripts/make_validation_figure.py --recompute
 python paper/scripts/make_figure1_overview.py
 ```
 
-These write figures under `paper/figures/`; generated figures are not bundled with the code release. The validation script reads `outputs/reassign/` and the default purpose parquet. Its mode panel reconstructs the pre-refinement calibration stage and checks it against the mode/time diagnostic. `--recompute` rebuilds the AM-purpose cache from the purpose parquet and checks it against the NTS0502 diagnostic. The script expects the paper's national build, including 427 region/band/mode cells with survey targets, and is not a general validation command for regional sensitivity runs.
+These write figures under `paper/figures/`; generated figures are not bundled with the code release. The validation script reads `outputs/reassign/` and the default purpose parquet. Its mode panel reconstructs the regional/distance-band mode-calibrated volumes used for the typical-week product and checks them against the mode/time diagnostic. `--recompute` rebuilds the AM-purpose cache from the purpose parquet and checks it against the NTS0502 diagnostic. The script expects the paper's national build, including 427 region/band/mode cells with survey targets, and is not a general validation command for regional sensitivity runs.
 
 ## Other CLI uses
 
@@ -163,6 +170,32 @@ uk-travel-pipeline local-authority-visualisations
 These commands use `data/raw/lookups/EEH-MSOACDs.csv` and an additional MSOA-to-LAD lookup that must be acquired separately: `data/raw/lookups/OA21_LAD22_LSOA21_MSOA21_LEP22_EN_LU_V2_6716459600479702985.csv`. Override these paths with `--eeh-msoa-lookup-csv` and `--msoa-lad-lookup-csv`. Results are written under `outputs/local_authority_use_cases/`. Inspect each command's `--help` output for other input-path overrides, MSOA study-area radii and British National Grid anchors. Plotting requires the `plots` extra.
 
 For the complete option list, run `uk-travel-pipeline --help` or `uk-travel-pipeline <command> --help`.
+
+## Citation
+
+Please cite the methods paper when using the pipeline or calibration method, and the specific dataset version when using the released matrices.
+
+**Methods paper (arXiv preprint):**
+
+> Zhang, B., Zhong, C., Ma, M., & Golding-Graham, J. (2026). *Travel Mode- and Purpose-Specific Origin-Destination Matrices for England and Wales from Fused Travel Survey and Mobile Network Data*. [arXiv:2609.36466](https://arxiv.org/abs/2609.36466).
+
+```bibtex
+@misc{zhang2026travelmatrices,
+  author        = {Zhang, Bowen and Zhong, Chen and Ma, Mingfei and Golding-Graham, James},
+  title         = {Travel Mode- and Purpose-Specific Origin-Destination Matrices for England and Wales from Fused Travel Survey and Mobile Network Data},
+  year          = {2026},
+  eprint        = {2609.36466},
+  archivePrefix = {arXiv},
+  primaryClass  = {physics.soc-ph},
+  url           = {https://arxiv.org/abs/2609.36466}
+}
+```
+
+**Dataset (V1.0):**
+
+> Zhang, B., Zhong, C., & Ma, M. (2026). *An open dataset of survey-calibrated origin-destination matrices for England and Wales* (V1.0) [Data set]. Zenodo. [10.5281/zenodo.22546252](https://doi.org/10.5281/zenodo.22546252).
+
+The dataset has a separate creator list in its Zenodo metadata. The DOI above identifies the V1.0 record; cite the DOI of the version actually used. See the [Zenodo record](https://zenodo.org/records/22546252) for citation exports and the [dataset guide](README_Zenodo_V1.0.md) for attribution requirements.
 
 ## Licence
 
