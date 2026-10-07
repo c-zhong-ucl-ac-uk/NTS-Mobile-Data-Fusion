@@ -23,7 +23,7 @@ def test_legacy_output_written_only_when_enabled(tmp_path: Path):
 
     outputs = tmp_path / "outputs"
     legacy = tmp_path / "output"
-    cfg = MatrixConfig(adjusted_parquet=adjusted, outputs_root=outputs, modes=("ROAD",))
+    cfg = MatrixConfig(adjusted_parquet=adjusted, purpose_parquet=None, outputs_root=outputs, modes=("ROAD",))
 
     run_matrices(cfg, legacy_output_root=None)
     assert (outputs / "matrices" / "typical_week_by_mode" / "OD_matrix_ROAD_adjusted.csv").exists()
